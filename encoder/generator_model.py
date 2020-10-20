@@ -47,6 +47,6 @@ class Generator:
         return self.sess.run(self.dlatent_variable)
 
     def generate_images(self, dlatents=None):
-        if dlatents:
+        if dlatents is not None:
             self.set_dlatents(dlatents)
         return self.sess.run(self.generated_image_uint8)
